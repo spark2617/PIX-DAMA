@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "b1c26dd5-1369-465f-91c4-4ef3d5b559cd",
+		"name": "PIX-DAMA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21375756"
+	},
+	"item": [
+		{
+			"name": "signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"email@gmail.com\",\r\n    \"password\":\"sua_senha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/signin/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"signin",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"seu_nome\",\r\n    \"email\":\"email@gmail.com\",\r\n    \"password\":\"sua_senha\",\r\n    \"cpf\":\"\",\r\n    \"birthdate\":\"\",\r\n    \"confirmou_dados\":true,\r\n    \"confirmou_idade\":true,\r\n    \"aceitou_termos\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/users/signup/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cashiIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/payments/cash-in",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"cash-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "webHook",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-signature",
+						"value": "8b59f0e156b0890b52edf4eaa60f5b76ff4f8fb8a1673de20b3944eb804a61bb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"testando\",\r\n    \"external_id\": \"218a7ed8-dc0d-42ba-999e-3a96c83a7dca\",\r\n    \"status\": \"AUTHORIZED\",\r\n    \"payment_method\": \"PIX\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/payments/webhook",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cash-out",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pix_key\":\"chave_pix\",\r\n    \"pix_type\":\"CPF\" | \"CNPJ\" | \"EMAIL\" | \"PHONE\" | \"RANDOM\",\r\n    \"amount\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/payments/cash-out",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"cash-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "history-transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/payments/history-transactios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"history-transactios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payments/balance-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"balance-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getStatistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/admin/get-statistics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"get-statistics"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
