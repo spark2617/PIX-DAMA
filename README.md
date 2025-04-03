@@ -98,7 +98,7 @@ PIXDAMA-FRONT/
 
 # Supabase Database Structure
 
-Este documento explica a estrutura das tabelas no banco de dados do Supabase e suas respectivas funções.
+Estrutura das tabelas no banco de dados do Supabase e suas respectivas funções.
 
 ## Tabelas
 
